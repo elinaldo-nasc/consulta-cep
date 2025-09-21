@@ -1,115 +1,174 @@
-# Consulta CEP
+# 📍 Consulta CEP
 
-Aplicação web para consulta de CEPs brasileiros com tema dark moderno.
+> Aplicação web moderna para consulta de CEPs brasileiros com tema dark elegante
+
+![PHP](https://img.shields.io/badge/PHP-7.4+-777BB4?style=flat&logo=php&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![ViaCEP](https://img.shields.io/badge/API-ViaCEP-green?style=flat)
 
 ## ✨ Funcionalidades
 
-- ✅ Validação de CEP em tempo real
-- ✅ Máscara automática (00000-000)
-- ✅ Tema dark responsivo
-- ✅ Tratamento robusto de erros
-- ✅ Interface acessível
-- ✅ Consumo da API ViaCEP
+- 🎯 **Validação em tempo real** - Feedback instantâneo enquanto digita
+- 🔢 **Máscara automática** - Formato 00000-000 aplicado automaticamente
+- 🌙 **Tema dark moderno** - Interface elegante e confortável
+- ⚡ **Tratamento robusto de erros** - 3 tipos de validação (formato, existência, rede)
+- ♿ **Interface acessível** - Labels, ARIA, navegação por teclado
+- 📱 **100% responsivo** - Funciona perfeitamente em qualquer dispositivo
+- 🚫 **Prevenção de CEPs inválidos** - Detecta dígitos iguais (00000000, 11111111, etc.)
 
 ## 🛠️ Tecnologias
 
-- **Backend**: PHP 7.4+
-- **Frontend**: JavaScript ES6, CSS3
-- **API**: ViaCEP
-- **Design**: Tema dark moderno
+- **Backend**: PHP 7.4+ com validações robustas
+- **Frontend**: JavaScript ES6, CSS3 moderno
+- **API**: [ViaCEP](https://viacep.com.br/) - API oficial brasileira
+- **Design**: Tema dark com gradientes e animações
 
-## 📱 Responsividade
+## 📱 Compatibilidade
 
-- ✅ Desktop
-- ✅ Tablet
-- ✅ Mobile
+| Dispositivo | Status | Resolução |
+|-------------|--------|-----------|
+| 🖥️ Desktop | ✅ Otimizado | 1024px+ |
+| 📱 Tablet | ✅ Responsivo | 768px - 1023px |
+| 📱 Mobile | ✅ Responsivo | 320px - 767px |
 
 ## 🎨 Características do Design
 
-- Tema dark com gradientes
-- Animações suaves
-- Estados visuais (erro/sucesso)
-- Interface minimalista
-- Contraste otimizado para acessibilidade
+- **Gradiente escuro** - Azul marinho com tons elegantes
+- **Efeito vidro fosco** - Backdrop-filter para modernidade
+- **Animações suaves** - Transições em 0.3s com easing
+- **Estados visuais** - Verde (sucesso), vermelho (erro)
+- **Contraste otimizado** - WCAG AA compliant
+- **Tipografia moderna** - Segoe UI para melhor legibilidade
 
-## 🚀 Como Usar
+## 🚀 Instalação e Uso
 
-1. Clone o repositório
-2. Configure um servidor web (Apache/Nginx)
-3. Acesse o arquivo `index.php`
-4. Digite um CEP e veja o resultado!
-
-## 📝 Exemplo de Uso
-
-- Digite: `01310-100`
-- Resultado: Endereço completo do CEP
-
-## 🔧 Requisitos
-
+### Pré-requisitos
 - PHP 7.4 ou superior
-- Servidor web (Apache/Nginx)
-- Conexão com internet (para API ViaCEP)
+- Servidor web (Apache/Nginx/XAMPP)
+- Conexão com internet
+
+### Instalação
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/consulta-cep.git
+
+# Navegue para o diretório
+cd consulta-cep
+
+# Configure o servidor web para apontar para este diretório
+# Exemplo com XAMPP: copie para htdocs/
+```
+
+### Uso
+1. Acesse `index.php` no seu navegador
+2. Digite um CEP no formato 00000-000
+3. Veja o endereço completo aparecer instantaneamente
+
+## 📝 Exemplos de Uso
+
+| CEP | Resultado |
+|-----|-----------|
+| `01310-100` | Av. Paulista, São Paulo |
+| `20040-020` | Rua da Carioca, Rio de Janeiro |
+| `40170-010` | Rua Chile, Salvador |
 
 ## 📁 Estrutura do Projeto
 
 ```
 consulta-cep/
-├── index.php          # Interface principal
-├── viacep.php         # Lógica de validação e API
-├── style.css          # Estilos do tema dark
-└── README.md          # Documentação
+├── index.php          # Interface principal com HTML, CSS e JS
+├── viacep.php         # Lógica de validação e consumo da API
+├── style.css          # Estilos do tema dark responsivo
+├── README.md          # Documentação completa
+└── .gitignore         # Arquivos ignorados pelo Git
 ```
 
-## 🎯 Validações Implementadas
+## 🎯 Sistema de Validações
 
-### Frontend
-- Máscara automática de CEP
-- Validação em tempo real
-- Feedback visual (cores verde/vermelha)
-- Correção automática do backspace
+### 🖥️ Frontend (JavaScript)
+- **Máscara automática**: Formato 00000-000 aplicado em tempo real
+- **Validação instantânea**: Feedback visual enquanto digita
+- **Estados visuais**: Verde (válido), vermelho (inválido), normal (vazio)
+- **Correção de UX**: Backspace funciona corretamente no hífen
+- **Prevenção de spam**: Limitação de caracteres e formatação
 
-### Backend
-- Sanitização de entrada
-- Validação de formato
-- Detecção de CEPs inválidos (dígitos iguais)
-- Tratamento de erros de rede
-- Timeout de 10 segundos
+### ⚙️ Backend (PHP)
+- **Sanitização robusta**: Remove caracteres não numéricos e limita a 8 dígitos
+- **Validação de formato**: Regex para padrão brasileiro
+- **Detecção inteligente**: CEPs com dígitos iguais são rejeitados
+- **Tratamento de rede**: Timeout de 10s e tratamento de falhas
+- **Múltiplos erros**: 3 tipos distintos de mensagens de erro
 
-## 🔍 Tipos de Erro
+## 🔍 Tipos de Erro e Feedback
 
-- **CEP Inválido**: Formato incorreto ou dígitos iguais
-- **CEP não encontrado**: Formato correto mas inexistente
-- **Erro na consulta**: Problema de rede/timeout
+| Tipo | Condição | Mensagem | Cor |
+|------|----------|----------|-----|
+| **Formato Inválido** | Dígitos insuficientes ou dígitos iguais | "CEP inválido. Digite um CEP válido." | 🔴 Vermelho |
+| **Não Encontrado** | Formato correto mas CEP inexistente | "CEP não encontrado." | 🔴 Vermelho |
+| **Erro de Rede** | Timeout ou falha na API | "Erro na consulta. Tente novamente." | 🔴 Vermelho |
+| **Sucesso** | CEP válido e encontrado | "CEP válido ✓" | 🟢 Verde |
 
-## 🎨 Cores do Tema Dark
+## 🎨 Paleta de Cores
 
-- **Background**: Gradiente azul escuro
-- **Formulário**: Azul acinzentado translúcido
-- **Sucesso**: Verde esmeralda
-- **Erro**: Vermelho vibrante
-- **Texto**: Branco/cinza claro
+```css
+/* Background */
+background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
 
-## 📊 Status do Projeto
+/* Formulário */
+background: rgba(30, 41, 59, 0.95);
 
-- ✅ Interface responsiva
-- ✅ Validações robustas
-- ✅ Tratamento de erros
-- ✅ Tema dark moderno
-- ✅ Acessibilidade
-- ✅ Performance otimizada
+/* Estados */
+--success: #00b894;
+--error: #ff4757;
+--text: #ffffff;
+--placeholder: #64748b;
+```
 
-## 🤝 Contribuições
+## 📊 Funcionalidades Implementadas
 
-Contribuições são bem-vindas! Sinta-se à vontade para:
+- ✅ **Interface responsiva** - Mobile-first design
+- ✅ **Validações robustas** - Frontend e backend
+- ✅ **Tratamento de erros** - 3 tipos distintos
+- ✅ **Tema dark moderno** - Gradientes e efeitos
+- ✅ **Acessibilidade** - ARIA, labels, navegação por teclado
+- ✅ **Performance otimizada** - Carregamento rápido
+- ✅ **UX aprimorada** - Feedback visual e animações
 
-- Reportar bugs
-- Sugerir melhorias
-- Enviar pull requests
+## 🚀 Como Contribuir
+
+1. **Fork** o projeto
+2. **Crie** uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
+3. **Commit** suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. **Push** para a branch (`git push origin feature/nova-funcionalidade`)
+5. **Abra** um Pull Request
+
+### 🐛 Reportando Bugs
+- Use o template de issue
+- Inclua screenshots se possível
+- Descreva os passos para reproduzir
+
+### 💡 Sugerindo Melhorias
+- Descreva a funcionalidade desejada
+- Explique o benefício para os usuários
+- Considere a compatibilidade com o design atual
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT.
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🙏 Agradecimentos
+
+- [ViaCEP](https://viacep.com.br/) - API gratuita e confiável
+- Comunidade PHP e JavaScript
+- Inspiração em designs modernos
 
 ---
 
+<div align="center">
+
 **Desenvolvido com ❤️ para facilitar a consulta de CEPs brasileiros**
+
+⭐ Se este projeto foi útil, considere dar uma estrela!
+
+</div>
