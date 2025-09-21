@@ -1,0 +1,95 @@
+# ===========================================
+# CONSULTA CEP - ARQUIVOS IGNORADOS
+# ===========================================
+
+# Arquivos temporários do sistema
+*.tmp
+*.log
+*.cache
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos do sistema operacional
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Arquivos de configuração sensíveis
+.env
+.env.local
+.env.production
+.env.development
+config.local.php
+config.prod.php
+database.php
+
+# Arquivos de IDE e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# Arquivos de backup
+*.bak
+*.backup
+*.old
+*.orig
+*~
+
+# Logs e arquivos de debug
+error.log
+access.log
+debug.log
+*.log
+logs/
+
+# Arquivos de sessão PHP
+sess_*
+session_*
+
+# Arquivos temporários PHP
+php_errors.log
+php_errors.txt
+
+# Arquivos de cache
+cache/
+tmp/
+temp/
+.tmp/
+
+# Arquivos de upload (se implementado futuramente)
+uploads/
+files/
+media/
+
+# Dependências (se usar Composer futuramente)
+vendor/
+composer.lock
+
+# Arquivos de build e distribuição
+build/
+dist/
+release/
+
+# Arquivos de teste (se implementar futuramente)
+tests/
+test/
+.phpunit.result.cache
+
+# Arquivos de documentação gerados
+docs/_build/
+site/
+
+# Arquivos específicos do projeto
+# (adicione aqui arquivos específicos que não devem ser versionados)
