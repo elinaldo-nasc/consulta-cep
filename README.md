@@ -167,8 +167,9 @@ Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) par
 
 <div align="center">
 
-**Desenvolvido com ❤️ para facilitar a consulta de CEPs brasileiros**
+**Desenvolvido para facilitar a consulta de CEPs brasileiros**
 
 ⭐ Se este projeto foi útil, considere dar uma estrela!
 
 </div>
+
